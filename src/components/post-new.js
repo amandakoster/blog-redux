@@ -19,9 +19,16 @@ class PostNew extends React.Component {
         );
     }
 
+    onSubmit(values){
+    console.log(values,'values')
+    }
+
     render() {
+
+        const { handleSubmit } = this.props;
+
         return(
-            <form>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field
                     label="Post Title"
                     name="title"
