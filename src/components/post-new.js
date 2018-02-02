@@ -2,11 +2,16 @@ import React from 'react';
 
 
 
-class postNew extends React.Component {
+class PostNew extends React.Component {
 
     render() {
-        return{
-            
-        }
+        return(
+            <div>
+            New Posts!
+            </div>
+
+        );
     }
 }
+
+export default PostNew;
