@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchPosts } from '../actions';
 
 class PostIndex extends React.Component {
@@ -21,7 +22,13 @@ class PostIndex extends React.Component {
     render() {
         return (
             <div>
-            <h3>Posts</h3>
+            <div className="text-xs-right">
+                <Link className="btn btn-primary" to="/post/new">
+                Add A Post
+                </Link>
+            </div>
+
+            <h5>Posts!</h5>
             <ul className="list-group">
             {this.renderPosts()}
             </ul>
