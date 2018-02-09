@@ -5,18 +5,18 @@ class PostNew extends React.Component {
 
     renderField(field) {
 
-        const { meta } = field;
-        const className = `form-group has-error ${meta.touched && meta.error ? 'has-danger' : ''}`;
+        const { meta: {touched, error }} = field;
+        const className = `form-group has-error ${touched && error ? 'has-danger' : ''}`;
 
         return(
-        <div className="form-group has-error is-invalid">
+        <div className={className}>
             <label>{field.label}</label>
                 <input
                 className="form-control"
                 type="text"
                 {...field.input}
                 />
-                <div className="text-danger"> {meta.touched ? meta.error : ''} </div>
+                <div className="text-danger"> {touched ? error : ''} </div>
         </div>
         );
     }
