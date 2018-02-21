@@ -24,7 +24,7 @@ class PostNew extends React.Component {
         );
     }
 
-    onSubmit(values)
+    onSubmit(values){
         this.props.createPost(values, () => {
             this.props.history.push('/');
         });
