@@ -24,9 +24,11 @@ class PostNew extends React.Component {
         );
     }
 
-    onSubmit(values){
-        this.props.createPost(values);
-    }
+    onSubmit(values)
+        this.props.createPost(values, () => {
+            this.props.history.push('/');
+        });
+    };
 
     render() {
         const { handleSubmit } = this.props;
@@ -40,7 +42,7 @@ class PostNew extends React.Component {
                     />
                 <Field
                     label="Categories"
-                    name="category"
+                    name="categories"
                     component={this.renderField}
                     />
                 <Field
@@ -62,8 +64,8 @@ function validate(values){
     if(!values.title){
         errors.title = "Enter a title.";
     }
-    if(!values.category){
-        errors.category = "Enter some categories.";
+    if(!values.categories){
+        errors.categories = "Enter some categories.";
     }
     if(!values.content){
         errors.content = "Enter your text.";
